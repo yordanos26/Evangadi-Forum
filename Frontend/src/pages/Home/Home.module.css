@@ -36,25 +36,19 @@
 .searchContainer {
   margin: 20px 0;
   text-align: center;
- 
 }
-.span{
+
+.span {
   color: #fe750b;
   font-weight: bold;
   font-size: 28px;
   font-style: oblique;
   margin-right: 10px;
   margin-left: 10px;
-  
 }
-.username{
+.username {
   font-size: 32px;
 }
-
-
-
-
-
 
 /* Search input field styling */
 .searchInput {
@@ -74,7 +68,6 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   border-color: #fe750b; /* Company color for focus */
 }
-
 
 /* Question header styling */
 .questionHeader {
@@ -116,8 +109,8 @@
 .questionText {
   flex: 1;
 }
-
-.questionInfo{
+/* question info styles */
+.questionInfo {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -151,7 +144,43 @@
   animation: spin 1s linear infinite;
 }
 
+.parentContainer {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1;
+}
 
+.listContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* gap: 20px; */
+  margin-right: 1em;
+}
+
+.profileImgContainer {
+  border-radius: 50%;
+  width: 4em;
+  height: 4em;
+  overflow: hidden;
+  position: relative;
+}
+
+.profileImg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profileImgCircle {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 /* Spinner animation keyframes */
 @keyframes spin {
   0% {
@@ -182,7 +211,6 @@
   margin: 20px 0; /* Space above and below */
 }
 
-
 .askButton:hover {
   background-color: #e6640d; /* Darker shade on hover */
 }
@@ -190,20 +218,33 @@
 /* Responsive styles */
 @media (max-width: 768px) {
   .askButton {
-    font-size: 14px; /* Smaller font size on smaller screens */
-    padding: 8px 16px; /* Less padding */
+    font-size: 14px;
+    padding: 8px 16px;
     width: 40%;
   }
 }
 
 @media (max-width: 780px) {
   .askButton {
-    font-size: 12px; /* Even smaller font size */
-    padding: 6px 12px; /* Further reduce padding */
-    width: 40%; /* Full width on small screens */
+    font-size: 12px;
+    padding: 6px 12px;
+    width: 40%;
   }
-  .profileImageContainer{
+  .profileImageContainer {
     display: none;
+  }
+  .username {
+    font-size: 18px;
+  }
+  .span {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 768) {
+  .profileImageContainer {
+    position: absolute;
+    right: 100px;
   }
 }
 
@@ -216,4 +257,3 @@
   text-decoration: none;
   color: black;
 }
-

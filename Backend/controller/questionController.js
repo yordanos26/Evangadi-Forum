@@ -46,6 +46,14 @@ async function question(req, res) {
       .json({ msg: "Unexpected error occured." });
   }
 }
+
+
+
+
+
+
+
+
 // get all question
 async function getAllQuestions(req, res) {
   try {

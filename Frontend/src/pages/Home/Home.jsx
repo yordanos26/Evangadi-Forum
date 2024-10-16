@@ -5,13 +5,11 @@ import { Link, useNavigate } from "react-router-dom";
 import { AppState } from "../../Routes/Router";
 import axiosBaseURL from "../../Utility/ApiConfig";
 import { RiAccountCircleFill } from "react-icons/ri";
-import Auth from "../Auth/Auth";
 import ProfileImage from "./ProfileImage";
-import { TbBackground } from "react-icons/tb";
+
 function Home() {
   const { user } = useContext(AppState);
 
-  // console.log(user);
   // State to store questions
   const [questions, setQuestions] = useState([]); // To store questions
   const [loading, setLoading] = useState(true); // To manage loading state
@@ -62,14 +60,7 @@ function Home() {
 
   return (
     <Layout>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          position: "relative",
-          zIndex: "1",
-        }}
-      >
+      <div className={styles.parentContainer}>
         {/* Main Content */}
         <main className={styles.mainContent}>
           <div className={styles.headerContainer}>
@@ -79,8 +70,9 @@ function Home() {
             >
               Ask Question
             </button>
-
-            <h3 className={styles.username}><span className={styles.span}>Welcome</span>, {user.username}</h3>
+            <h3 className={styles.username}>
+              <span className={styles.span}>Welcome</span>, {user.username}
+            </h3>
           </div>
           {/* Search Bar */}
           <div className={styles.searchContainer}>
@@ -115,42 +107,16 @@ function Home() {
                   className={styles.questionLink}
                 >
                   <li className={styles.questionItem}>
-                    <div
-                      style={{
-                        display: "flex",
-                        flexDirection: "column",
-                        alignItems: "center",
-                        marginRight: "2em",
-                      }}
-                    >
-                      <div
-                        style={{
-                          borderRadius: "50%",
-                          width: "4em",
-                          height: "4em",
-                          overflow: "hidden",
-                          position: "relative",
-                        }}
-                      >
+                    <div className={styles.listContainer}>
+                      <div className={styles.profileImgContainer}>
                         {q.profileimg ? (
                           <img
-                            // ref=
                             src={`http://localhost:5500${q.profileimg}`}
-                            style={{
-                              position: "absolute",
-                              width: "100%",
-                              height: "100%",
-                              objectFit: "cover",
-                            }}
+                            className={styles.profileImg}
                           />
                         ) : (
                           <RiAccountCircleFill
-                            style={{
-                              position: "absolute",
-                              width: "100%",
-                              height: "100%",
-                              objectFit: "cover",
-                            }}
+                            className={styles.profileImgCircle}
                           />
                         )}
                       </div>
@@ -174,7 +140,6 @@ function Home() {
                     >
                       ➡
                     </button>
-                    <hr />
                   </li>
                 </Link>
               ))}

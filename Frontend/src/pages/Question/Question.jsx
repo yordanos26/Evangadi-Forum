@@ -45,9 +45,8 @@ function Question() {
     } catch (error) {
       toast.error(error.response.data.msg);
       setError(error.response.data.msg || "Error posting question.");
-      console.log(error.response.data.msg);
-      // Log the error response for better debugging
-      // alert("Error posting question.");
+      // console.log(error.response.data.msg);
+  
     }
   };
 

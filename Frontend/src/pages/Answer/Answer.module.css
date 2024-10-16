@@ -70,7 +70,7 @@
   color: var(--secondary-color);
 }
 
-.answerInfo{
+.answerInfo {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -91,7 +91,7 @@
   cursor: pointer;
   text-decoration: none;
 }
-.HomelinkButton{
+.HomelinkButton {
   display: block;
   width: 20%;
   padding: 12px;
@@ -108,7 +108,7 @@
 
 .linkButton:hover,
 .submitButton:hover {
-  background:green;
+  background: green;
 }
 
 .answerTextarea {
@@ -122,7 +122,7 @@
   background: #f8f9fa;
 }
 
-.submittingMessage{
+.submittingMessage {
   margin-top: 12px;
   font-size: 1.8rem;
   color: #057b54;
@@ -173,14 +173,14 @@
   cursor: pointer;
   font-size: 1.3rem;
   transition: background-color 0.3s, color 0.3s, opacity 0.3s;
-    border: none;
+  border: none;
 }
 
-.likeButton:hover:not(:disabled){
+.likeButton:hover:not(:disabled) {
   color: #007bff; /* Blue color on hover */
 }
 .dislikeButton:hover:not(:disabled) {
-   color: #ff4800; /* red color on hover */
+  color: #ff4800; /* red color on hover */
 }
 
 .disabledButton {
@@ -191,4 +191,26 @@
 .likeButton:disabled,
 .dislikeButton:disabled {
   cursor: not-allowed;
+}
+
+.answerInfoCard {
+  border-radius: "50%";
+  width: "4em";
+  height: "4em";
+  overflow: "hidden";
+  position: "relative";
+}
+
+.Profilecircle {
+  position: "absolute";
+  width: "100%";
+  height: "100%";
+  object-fit: "cover";
+  color: "#ccc";
+}
+
+@media (max-width: 600px) {
+  .HomelinkButton {
+    width: 55%;
+  }
 }

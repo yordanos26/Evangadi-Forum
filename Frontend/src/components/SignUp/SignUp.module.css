@@ -34,16 +34,6 @@
   border: 1px solid #ddd;
   border-radius: 4px;
 }
-.success {
-  color: #4caf50; /* Green color */
-  background-color: #dff0d8; /* Light green background */
-  padding: 10px;
-  border: 1px solid #4caf50;
-  border-radius: 5px;
-  margin-bottom: 15px;
-  font-weight: bold;
-  text-align: center;
-}
 
 .signup_container button {
   background-color: #516cf0;
@@ -87,6 +77,7 @@ input:focus {
   .name_fields {
     display: block;
     flex-direction: column;
+      width: 100%;
   }
 
   .signup_container {

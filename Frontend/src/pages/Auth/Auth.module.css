@@ -1,14 +1,14 @@
-/* AuthPage.module.css */
 .authContainer {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  gap: 5px;
-  height: 100vh;
-
-  background-image: url("../../assets/10001.svg");
-  background-size: cover;
+  height: 80vh;
+  padding: 20px;
+  background: url("../../assets/10001.svg");
   background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background-attachment: fixed; */
 }
 
 .authContent {
@@ -19,7 +19,6 @@
   padding: 0px;
   max-width: 60%;
   margin: 0 auto;
-  /* max-width: 400px; */
   padding: 20px;
 }
 
@@ -30,7 +29,7 @@
 @media (max-width: 780px) {
   .authContainer {
     display: block;
-    width: 100%;
+    width: 85vw;
     height: 70vh;
   }
   .authContent {

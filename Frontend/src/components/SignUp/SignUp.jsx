@@ -48,8 +48,8 @@ const Signup = ({ onToggle }) => {
     }
 
     // Validate password (for simplicity, let's say it must be at least 6 characters)
-    if (formData.password.length < 6) {
-      errors.password = "Password must be at least 6 characters.";
+    if (formData.password.length < 8) {
+      errors.password = "Password must be at least 8 characters.";
     }
 
     setFormErrors(errors);

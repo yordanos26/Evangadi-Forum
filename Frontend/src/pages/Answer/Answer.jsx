@@ -95,7 +95,7 @@ const Answer = () => {
         }
       );
 
-     toast.success("Answer Submitted Successfully")
+      toast.success("Answer Submitted Successfully");
       setAnswerText("");
 
       // Add the new answer to the state
@@ -126,7 +126,6 @@ const Answer = () => {
       setSubmitting("");
       toast.error(error.response?.data?.message || "An error occurred.");
     }
-    
   };
 
   // Handle liking an answer
@@ -263,15 +262,7 @@ const Answer = () => {
             answers.map((ans) => (
               <div key={ans.id} className={classes.answerItem}>
                 <div className={classes.answerInfo}>
-                  <div
-                    style={{
-                      borderRadius: "50%",
-                      width: "4em",
-                      height: "4em",
-                      overflow: "hidden",
-                      position: "relative",
-                    }}
-                  >
+                  <div className={classes.answerInfoCard}>
                     {ans.profileimg ? (
                       <img
                         src={`http://localhost:5500${ans.profileimg}`}
@@ -284,15 +275,7 @@ const Answer = () => {
                         }}
                       />
                     ) : (
-                      <RiAccountCircleFill
-                        style={{
-                          position: "absolute",
-                          width: "100%",
-                          height: "100%",
-                          objectFit: "cover",
-                          color: "#ccc",
-                        }}
-                      />
+                      <RiAccountCircleFill className={classes.Profilecircle} />
                     )}
                   </div>
                   <p className={classes.answerDetails}>{ans.username}</p>
