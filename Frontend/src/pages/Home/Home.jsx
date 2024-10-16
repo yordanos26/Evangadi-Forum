@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useContext, useEffect, useState } from "react";
 import Layout from "../../components/Layout/Layout";
 import styles from "./Home.module.css";
@@ -11,10 +12,13 @@ function Home() {
   const { user } = useContext(AppState);
 
   // State to store questions
-  const [questions, setQuestions] = useState([]); // To store questions
-  const [loading, setLoading] = useState(true); // To manage loading state
-  const [searchTerm, setSearchTerm] = useState(""); // State for search input
+  const [questions, setQuestions] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [currentPage, setCurrentPage] = useState(1); // State for current page
+  const questionsPerPage = 5; // Number of questions per page
   const navigate = useNavigate();
+
   // Fetch questions from the backend
   useEffect(() => {
     const fetchQuestions = async () => {
@@ -25,13 +29,11 @@ function Home() {
           },
         });
 
-        // console.log("Fetched questions:", response.data);
         setQuestions(response.data.questions);
-        // Set the questions from response
       } catch (err) {
         console.error("Failed to fetch questions:", err);
       } finally {
-        setLoading(false); // Set loading to false after fetch
+        setLoading(false);
       }
     };
 
@@ -53,15 +55,25 @@ function Home() {
     q.title.toLowerCase().includes(searchTerm)
   );
 
+  // Pagination logic
+  const indexOfLastQuestion = currentPage * questionsPerPage;
+  const indexOfFirstQuestion = indexOfLastQuestion - questionsPerPage;
+  const currentQuestions = filteredQuestions.slice(
+    indexOfFirstQuestion,
+    indexOfLastQuestion
+  );
+
+  // Change page
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
   // Navigate to the "Ask Question" page
   const handleAskQuestionClick = () => {
-    navigate("/questions/ask"); // Navigate to the "Ask Question" page
+    navigate("/questions/ask");
   };
 
   return (
     <Layout>
       <div className={styles.parentContainer}>
-        {/* Main Content */}
         <main className={styles.mainContent}>
           <div className={styles.headerContainer}>
             <button
@@ -74,33 +86,29 @@ function Home() {
               <span className={styles.span}>Welcome</span>, {user.username}
             </h3>
           </div>
-          {/* Search Bar */}
           <div className={styles.searchContainer}>
             <input
               type="text"
               className={styles.searchInput}
               placeholder="Search for questions..."
               value={searchTerm}
-              onChange={handleSearchChange} // Trigger search on input change
+              onChange={handleSearchChange}
             />
           </div>
           <h3 className={styles.questionHeader}>Questions</h3>
           <hr style={{ marginBottom: "20px" }} />
 
-          {/* Loading Indicator */}
           {loading ? (
             <div className={styles.loadingSpinner}>
               <div className={styles.spinner}></div>
             </div>
-          ) : // Check for no matches found
-          filteredQuestions.length === 0 ? (
+          ) : filteredQuestions.length === 0 ? (
             <div className={styles.noMatchMessage}>
               No matching questions found.
             </div>
           ) : (
-            // Question List
             <ul className={styles.questionList}>
-              {filteredQuestions.map((q, index) => (
+              {currentQuestions.map((q, index) => (
                 <Link
                   to={`/getQuestions/${q.questionid}`}
                   key={index}
@@ -145,6 +153,25 @@ function Home() {
               ))}
             </ul>
           )}
+
+          {/* Pagination Controls */}
+          <div className={styles.pagination}>
+            <button
+              onClick={() => paginate(currentPage - 1)}
+              disabled={currentPage === 1}
+              className={styles.paginationButton}
+            >
+              Previous
+            </button>
+            <span>Page {currentPage}</span>
+            <button
+              onClick={() => paginate(currentPage + 1)}
+              disabled={indexOfLastQuestion >= filteredQuestions.length}
+              className={styles.paginationButton}
+            >
+              Next
+            </button>
+          </div>
         </main>
         <div className={styles.profileImageContainer}>
           <ProfileImage />

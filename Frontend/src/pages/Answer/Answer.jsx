@@ -1,11 +1,12 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import axiosBaseURL from "../../Utility/ApiConfig";
 import Layout from "../../components/Layout/Layout";
-import classes from "./Answer.module.css"; // Import the CSS module
+import classes from "./Answer.module.css"; 
 import { RiAccountCircleFill } from "react-icons/ri";
 import { TbMessageQuestion } from "react-icons/tb";
-import { FaThumbsUp, FaThumbsDown } from "react-icons/fa"; // Import icons for like/dislike
+import { FaThumbsUp, FaThumbsDown } from "react-icons/fa"; // Imported icons for like/dislike
 import { toast } from "react-toastify";
 
 const Answer = () => {
@@ -17,7 +18,7 @@ const Answer = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const [userReactions, setUserReactions] = useState({}); // Track user reactions
 
-  // Retrieve user data (Assuming you have stored userId and token in localStorage upon login)
+  // Retrieve user data ( in stored userId and token in localStorage upon login)
   const userId = localStorage.getItem("userId");
   const token = localStorage.getItem("token");
 
@@ -32,6 +33,7 @@ const Answer = () => {
       }
     }
   }, [questionid, userId]);
+
 
   // Save user reactions to localStorage whenever they change
   useEffect(() => {

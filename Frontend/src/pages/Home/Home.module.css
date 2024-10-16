@@ -131,13 +131,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100px; /* Adjust height as needed */
+  height: 100px;
 }
 
 /* Spinner animation */
 .spinner {
-  border: 5px solid #ccc; /* Light gray border */
-  border-top: 5px solid #fe750b; /* Company color for the top */
+  border: 5px solid #ccc;
+  border-top: 5px solid #fe750b;
   border-radius: 50%;
   width: 30px;
   height: 30px;
@@ -181,6 +181,41 @@
   height: 100%;
   object-fit: cover;
 }
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.paginationButton {
+  background-color: #ff7800;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 16px;
+}
+
+.paginationButton:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.paginationButton:hover:not(:disabled) {
+  background-color: #de7518;
+}
+
+.pagination span {
+  margin: 0 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
 /* Spinner animation keyframes */
 @keyframes spin {
   0% {

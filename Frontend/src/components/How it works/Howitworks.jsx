@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React from "react";
 import "./HowitWorks.css"; // CSS for Z-pattern styling
 import Layout from "../Layout/Layout";
@@ -15,7 +16,7 @@ const HowItWorks = () => {
               To use the platform, you need to either create an account or log
               in if you already have one.
               <ul>
-                <li>Click on the Sign-Up option if you're new.</li>
+                <li>Click on the Sign-Up option if you&apos;re new.</li>
                 <li>
                   Fill in your first name, last name, username, email, and
                   password (minimum 8 characters).
@@ -53,13 +54,13 @@ const HowItWorks = () => {
               can view or post questions.
               <ul>
                 <li>
-                  Click on "Ask a Question" and fill out the title and
+                  Click on &quot;Ask a Question&quot; and fill out the title and
                   description.
                 </li>
                 <li>
                   Summarize your problem in a short title (max 200 words).
                 </li>
-                <li>Click "Post" to submit your question.</li>
+                <li>Click &quot;Post&quot; to submit your question.</li>
               </ul>
             </p>
           </div>
@@ -72,7 +73,7 @@ const HowItWorks = () => {
             <p>
               To answer a question, click on a question’s title to view the
               details and answers. You can provide your answer in the answer box
-              and click "Post" to submit it.
+              and click &quot;Post&quot; to submit it.
             </p>
           </div>
           <div className="image">

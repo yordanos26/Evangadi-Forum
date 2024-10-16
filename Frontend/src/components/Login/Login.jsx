@@ -1,5 +1,5 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import styles from "./Login.module.css";
 import { Link } from "react-router-dom";
 import axiosBaseURL from "../../Utility/ApiConfig";
@@ -7,13 +7,13 @@ import Swal from "sweetalert2";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+// eslint-disable-next-line react/prop-types
 const Login = ({ onToggle }) => {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
   const [showPassword, setShowPassword] = useState(false); // State to toggle password visibility
-  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });

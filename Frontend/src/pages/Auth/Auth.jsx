@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useState } from "react";
 import Layout from "../../components/Layout/Layout";
 import Signup from "../../components/SignUp/SignUp";

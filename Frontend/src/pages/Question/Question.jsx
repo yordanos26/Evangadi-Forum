@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useState } from "react";
 import Layout from "../../components/Layout/Layout";
 import axiosBaseURL from "../../Utility/ApiConfig"; // Import your configured axios instance
@@ -7,7 +8,6 @@ import { toast } from "react-toastify";
 function Question() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
 
   const handleSubmit = async (e) => {
@@ -34,19 +34,17 @@ function Question() {
       if (response.status === 201) {
         // alert("Question posted successfully!");
         toast.success("Question posted successfully!");
-        // setSuccess(" Your Question posted successfully!");
         console.log("successful");
         setTitle("");
         setDescription("");
-          setTimeout(() => {
-        window.location.href = "/";
-      }, 4000);
+        setTimeout(() => {
+          window.location.href = "/";
+        }, 4000);
       }
     } catch (error) {
       toast.error(error.response.data.msg);
       setError(error.response.data.msg || "Error posting question.");
       // console.log(error.response.data.msg);
-  
     }
   };
 
@@ -105,7 +103,6 @@ function Question() {
                   </button>
                 </div>
               </form>
-              {success && <div className={classes.success}>{success}</div>}
             </div>
           </div>
         </div>

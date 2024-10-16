@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from "react";
 import { Route, Routes, useNavigate } from "react-router-dom";
 import Question from "../pages/Question/Question";
@@ -8,7 +9,7 @@ import Auth from "../pages/Auth/Auth";
 import { createContext } from "react";
 import axiosBaseURL from "../Utility/ApiConfig";
 import HowItWorks from "../components/How it works/Howitworks";
-import Signup from "../components/SignUp/SignUp";
+
 
 export const AppState = createContext();
 
