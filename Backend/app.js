@@ -38,6 +38,7 @@ const imageRoute = require("./routes/imageRoute");
 //image router middleware
 app.use("/api/images", authenticationMiddleware, imageRoute);
 
+// function to start server
 async function start() {
   try {
     const result = await dbconnection.execute("select 'test' ");
