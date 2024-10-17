@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState, useRef, useEffect } from "react";
-import{ axiosBaseURL, axiosImageURL} from "../../Utility/ApiConfig";
+import axiosBaseURL, {axiosImageURL} from "../../Utility/ApiConfig";
 import { RiAccountCircleFill } from "react-icons/ri";
 import { toast } from "react-toastify";
 

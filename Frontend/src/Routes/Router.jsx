@@ -20,7 +20,7 @@ function RouterApp() {
 
   async function checkUser() {
     try {
-      const { data } = await axiosBaseURL.get("api/users/check", {
+      const { data } = await axiosBaseURL.get("/users/check", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
