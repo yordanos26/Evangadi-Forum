@@ -1,9 +1,9 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import axiosBaseURL from "../../Utility/ApiConfig";
+import axiosBaseURL, { axiosImageURL } from "../../Utility/ApiConfig";
 import Layout from "../../components/Layout/Layout";
-import classes from "./Answer.module.css"; 
+import classes from "./Answer.module.css";
 import { RiAccountCircleFill } from "react-icons/ri";
 import { TbMessageQuestion } from "react-icons/tb";
 import { FaThumbsUp, FaThumbsDown } from "react-icons/fa"; // Imported icons for like/dislike
@@ -33,7 +33,6 @@ const Answer = () => {
       }
     }
   }, [questionid, userId]);
-
 
   // Save user reactions to localStorage whenever they change
   useEffect(() => {
@@ -267,7 +266,7 @@ const Answer = () => {
                   <div className={classes.answerInfoCard}>
                     {ans.profileimg ? (
                       <img
-                        src={`http://localhost:5500${ans.profileimg}`}
+                        src={`${axiosImageURL}${ans.profileimg}`}
                         alt={`${ans.username}'s profile`}
                         style={{
                           width: "4em",

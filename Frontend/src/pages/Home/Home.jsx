@@ -4,7 +4,7 @@ import Layout from "../../components/Layout/Layout";
 import styles from "./Home.module.css";
 import { Link, useNavigate } from "react-router-dom";
 import { AppState } from "../../Routes/Router";
-import axiosBaseURL,{ axiosImageURL } from "../../Utility/ApiConfig";
+import axiosBaseURL, { axiosImageURL } from "../../Utility/ApiConfig";
 import { RiAccountCircleFill } from "react-icons/ri";
 import ProfileImage from "./ProfileImage";
 
@@ -16,7 +16,7 @@ function Home() {
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
   const [currentPage, setCurrentPage] = useState(1); // State for current page
-  const questionsPerPage = 5; // Number of questions per page
+  const questionsPerPage = 8; // Number of questions per page
   const navigate = useNavigate();
 
   // Fetch questions from the backend
@@ -75,6 +75,7 @@ function Home() {
     <Layout>
       <div className={styles.parentContainer}>
         <main className={styles.mainContent}>
+          {/* header container */}
           <div className={styles.headerContainer}>
             <button
               className={styles.askButton}
@@ -86,6 +87,7 @@ function Home() {
               <span className={styles.span}>Welcome</span>, {user.username}
             </h3>
           </div>
+          {/* search bar */}
           <div className={styles.searchContainer}>
             <input
               type="text"
@@ -95,6 +97,7 @@ function Home() {
               onChange={handleSearchChange}
             />
           </div>
+
           <h3 className={styles.questionHeader}>Questions</h3>
           <hr style={{ marginBottom: "20px" }} />
 
@@ -130,9 +133,11 @@ function Home() {
                       </div>
                       <p style={{ fontWeight: "bold" }}>{q.username}</p>
                     </div>
+                    {/* Question Text */}
                     <div className={styles.questionText}>
                       <strong>{q.title}</strong>
                       <p>
+                        {/* Date */}
                         <p>
                           {new Date(q.tag).toLocaleDateString("en-US", {
                             year: "numeric",

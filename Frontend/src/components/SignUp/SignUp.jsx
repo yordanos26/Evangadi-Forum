@@ -150,7 +150,10 @@ const Signup = ({ onToggle }) => {
           Sign in
         </Link>
       </p>
+      
+      {/* Signup Form */}
       <form onSubmit={handleSubmit}>
+      {/* username */}
         <input
           type="text"
           name="username"
@@ -159,8 +162,8 @@ const Signup = ({ onToggle }) => {
           onChange={handleChange}
           required
         />
-
         <div className={classes.name_fields}>
+        {/* First Name */}
           <input
             type="text"
             name="firstName"
@@ -169,7 +172,7 @@ const Signup = ({ onToggle }) => {
             onChange={handleChange}
             required
           />
-
+        {/* Last name */}
           <input
             type="text"
             name="lastName"
@@ -179,7 +182,7 @@ const Signup = ({ onToggle }) => {
             required
           />
         </div>
-
+        {/* email */}
         <input
           type="email"
           name="email"
@@ -188,7 +191,7 @@ const Signup = ({ onToggle }) => {
           onChange={handleChange}
           required
         />
-
+        {/* Password */}
         <input
           type="password"
           name="password"

@@ -84,7 +84,7 @@ const Login = ({ onToggle }) => {
 
   return (
     <div className={styles.loginContainer}>
-      <ToastContainer /> {/* Add Toast container here */}
+      <ToastContainer />
       <h2 className={styles.title}>Login to your account</h2>
       <p className={styles.subtitle}>
         Don’t have an account?{" "}
@@ -92,8 +92,10 @@ const Login = ({ onToggle }) => {
           Create a new account
         </Link>
       </p>
+      {/* Login Form */}
       <form className={styles.loginForm} onSubmit={handleSubmit}>
         <div className={styles.inputGroup}>
+          {/* Email input section */}
           <input
             type="email"
             name="email"
@@ -106,6 +108,7 @@ const Login = ({ onToggle }) => {
         </div>
         <div className={styles.inputGroup}>
           <div className={styles.passwordWrapper}>
+            {/* Password input section */}
             <input
               type={showPassword ? "text" : "password"}
               name="password"

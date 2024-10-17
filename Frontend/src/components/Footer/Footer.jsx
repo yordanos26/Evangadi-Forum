@@ -10,6 +10,7 @@ import { AiOutlineYoutube } from "react-icons/ai"; // Social icons
 const openExternalLink = (url) => {
   window.open(url, "_blank", "noopener,noreferrer");
 };
+
 const Footer = () => {
   return (
     <footer className={styles.footerContainer}>
@@ -18,6 +19,7 @@ const Footer = () => {
         <div className={styles.logoAndSocials}>
           <img src={logo} alt="Evangadi logo" className={styles.footerLogo} />
           <div className={styles.socialIcons}>
+            {/* Evangadi Facebook address Link */}
             <Link
               onClick={() =>
                 openExternalLink("https://www.facebook.com/evangaditech/")
@@ -25,6 +27,7 @@ const Footer = () => {
             >
               <PiFacebookLogoLight />
             </Link>
+            {/* Evangadi Instagram Link */}
             <Link
               onClick={() =>
                 openExternalLink("https://www.instagram.com/evangaditech/")
@@ -32,6 +35,7 @@ const Footer = () => {
             >
               <IoLogoInstagram />
             </Link>
+            {/* Evangadi Channel Youtube Link */}
             <Link
               onClick={() =>
                 openExternalLink("https://www.youtube.com/evangaditech")

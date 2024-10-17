@@ -1,11 +1,11 @@
-.how-it-works {
+.howItWorks {
   padding: 40px;
   max-width: 1200px;
   margin: 0 auto;
   font-family: Arial, sans-serif;
 }
 
-.how-it-works h1 {
+.howItWorks h1 {
   text-align: center;
   color: #2d8cf0;
   margin-bottom: 40px;
@@ -21,18 +21,18 @@
 }
 
 /* Alternating Layout */
-.section-left .text {
+.sectionLeft .text {
   order: 1; /* Text on left */
 }
-.section-left .image {
+.sectionLeft .image {
   order: 2; /* Image on right */
 }
 
-.section-right .text {
+.sectionRight .text {
   order: 2; /* Text on right */
   text-align: left;
 }
-.section-right .image {
+.sectionRight .image {
   order: 1; /* Image on left */
 }
 
@@ -56,6 +56,7 @@
   margin-bottom: 10px;
   list-style: none;
 }
+
 /* Styling for images */
 .image {
   flex: 1;
