@@ -1,13 +1,11 @@
+// eslint-disable-next-line no-unused-vars
 import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./Footer.module.css";
 import logo from "../../assets/logo2.png";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faFacebookF, faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { PiFacebookLogoLight } from "react-icons/pi";
 import { IoLogoInstagram } from "react-icons/io5";
 import { AiOutlineYoutube } from "react-icons/ai"; // Social icons
-// Assuming you're using CSS modules
 
 const openExternalLink = (url) => {
   window.open(url, "_blank", "noopener,noreferrer");

@@ -1,11 +1,12 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useState } from "react";
 import classes from "./SignUp.module.css";
 import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
 import axiosBaseURL from "../../Utility/ApiConfig";
 import Swal from "sweetalert2";
-import { toast } from "react-toastify";
 
+
+// eslint-disable-next-line react/prop-types
 const Signup = ({ onToggle }) => {
   const [formData, setFormData] = useState({
     username: "",
@@ -15,8 +16,9 @@ const Signup = ({ onToggle }) => {
     password: "",
   });
 
+  // eslint-disable-next-line no-unused-vars
   const [formErrors, setFormErrors] = useState({});
-  const navigate = useNavigate();
+
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -89,7 +91,7 @@ const Signup = ({ onToggle }) => {
         });
       }
 
-      return false; // Prevent form submission if there are validation errors
+      return false; //To  Prevent form submission if there are validation errors
     }
 
     return true; // Form is valid if there are no errors

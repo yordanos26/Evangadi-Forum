@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
-import "./HowitWorks.css"; // CSS for Z-pattern styling
+import "./HowitWorks.css";
 import Layout from "../Layout/Layout";
 const HowItWorks = () => {
   return (

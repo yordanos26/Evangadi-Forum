@@ -11,6 +11,7 @@ import axiosBaseURL from "../Utility/ApiConfig";
 import HowItWorks from "../components/How it works/Howitworks";
 
 
+
 export const AppState = createContext();
 
 function RouterApp() {
@@ -19,7 +20,7 @@ function RouterApp() {
 
   async function checkUser() {
     try {
-      const { data } = await axiosBaseURL.get("/users/check", {
+      const { data } = await axiosBaseURL.get("api/users/check", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },

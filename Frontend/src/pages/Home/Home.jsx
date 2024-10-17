@@ -4,7 +4,7 @@ import Layout from "../../components/Layout/Layout";
 import styles from "./Home.module.css";
 import { Link, useNavigate } from "react-router-dom";
 import { AppState } from "../../Routes/Router";
-import axiosBaseURL from "../../Utility/ApiConfig";
+import { axiosBaseURL, axiosImageURL } from "../../Utility/ApiConfig";
 import { RiAccountCircleFill } from "react-icons/ri";
 import ProfileImage from "./ProfileImage";
 
@@ -119,7 +119,7 @@ function Home() {
                       <div className={styles.profileImgContainer}>
                         {q.profileimg ? (
                           <img
-                            src={`http://localhost:5500${q.profileimg}`}
+                            src={`${axiosImageURL}${q.profileimg}`}
                             className={styles.profileImg}
                           />
                         ) : (

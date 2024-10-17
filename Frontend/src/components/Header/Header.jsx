@@ -5,7 +5,7 @@ import styles from "./Header.module.css";
 import logo from "../../assets/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome, faSignInAlt, faSignOutAlt, faBars } from "@fortawesome/free-solid-svg-icons";
-import { AppState } from "../../Routes/Router"; // Adjust the import path
+import { AppState } from "../../Routes/Router"; 
 import ProfileImage from "../../pages/Home/ProfileImage";
 
 const Header = () => {

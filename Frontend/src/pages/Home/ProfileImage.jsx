@@ -1,5 +1,6 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useState, useRef, useEffect } from "react";
-import axiosBaseURL from "../../Utility/ApiConfig";
+import{ axiosBaseURL, axiosImageURL} from "../../Utility/ApiConfig";
 import { RiAccountCircleFill } from "react-icons/ri";
 import { toast } from "react-toastify";
 
@@ -10,12 +11,14 @@ const ProfileImage = () => {
   const [isDragging, setIsDragging] = useState(false);
   const [isImageLoaded, setIsImageLoaded] = useState(false); // Tracks if the image is loaded
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
+  // eslint-disable-next-line no-unused-vars
   const [croppedImageUrl, setCroppedImageUrl] = useState(null);
   const [uploadimage, setUploadimage] = useState(false);
   const [userresult, setUserresult] = useState([]);
 
   const imgRef = useRef(null);
   const canvasRef = useRef(null);
+  // eslint-disable-next-line no-unused-vars
   const croppedCanvasRef = useRef(null);
 
   // Fetch profile image from the backend
@@ -163,7 +166,7 @@ const ProfileImage = () => {
         >
           {userresult.profileimg ? (
             <img
-              src={`http://localhost:5500${userresult.profileimg}`}
+              src={`${axiosImageURL}${userresult.profileimg}`}
               alt={userresult.profileimg}
               style={{
                 position: "absolute",
