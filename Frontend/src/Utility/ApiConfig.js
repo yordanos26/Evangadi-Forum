@@ -1,8 +1,8 @@
 import axios from "axios";
 
 const axiosBaseURL = axios.create({
-  baseURL: "http://localhost:5500"+"/api",
+  baseURL: "https://evangadi-forum-2-yels.onrender.com" + "/api",
 });
 
 export default axiosBaseURL;
-export const axiosImageURL = "http://localhost:5500";
+export const axiosImageURL = "https://evangadi-forum-2-yels.onrender.com";
