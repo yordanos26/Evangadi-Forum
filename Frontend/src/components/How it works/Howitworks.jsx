@@ -2,6 +2,7 @@
 import React from "react";
 import styles from "./HowItWorks.module.css";
 import Layout from "../Layout/Layout";
+import { Link } from "react-router-dom";
 
 const HowItWorks = () => (
   <Layout>
@@ -13,8 +14,8 @@ const HowItWorks = () => (
         <div className={styles.text}>
           <h2>Create an Account or Log In</h2>
           <p style={{ textAlign: "left" }}>
-            To use the platform, you need to either create an account or log
-            in if you already have one.
+            To use the platform, you need to either create an account or log in
+            if you already have one.
             <ul>
               <li>Click on the Sign-Up option if you&apos;re new.</li>
               <li>
@@ -32,7 +33,8 @@ const HowItWorks = () => (
           <img
             src="https://cdni.iconscout.com/illustration/premium/thumb/sign-up-illustration-download-in-svg-png-gif-file-formats--log-register-form-user-interface-pack-design-development-illustrations-6430773.png?f=webp"
             alt="Create Account or Log In"
-            style={{ width: "400px" }} />
+            style={{ width: "400px" }}
+          />
         </div>
       </div>
       {/* Second Section: Image on left, Text on right */}
@@ -41,7 +43,8 @@ const HowItWorks = () => (
           <img
             src="https://img.freepik.com/free-vector/organic-flat-people-asking-questions_23-2148896826.jpg"
             alt="Ask a Question"
-            style={{ width: "400px" }} />
+            style={{ width: "400px" }}
+          />
         </div>
         <div className={styles.text}>
           <h2>Ask a Question</h2>
@@ -53,9 +56,7 @@ const HowItWorks = () => (
                 Click on &quot;Ask a Question&quot; and fill out the title and
                 description.
               </li>
-              <li>
-                Summarize your problem in a short title (max 200 words).
-              </li>
+              <li>Summarize your problem in a short title (max 200 words).</li>
               <li>Click &quot;Post&quot; to submit your question.</li>
             </ul>
           </p>
@@ -75,7 +76,8 @@ const HowItWorks = () => (
           <img
             src="https://www.shutterstock.com/image-vector/perplexed-characters-standing-huge-question-600nw-2320644731.jpg"
             alt="Answer a Question"
-            style={{ width: "400px" }} />
+            style={{ width: "400px" }}
+          />
         </div>
       </div>
       {/* Fourth Section: Image on left, Text on right */}
@@ -83,7 +85,8 @@ const HowItWorks = () => (
         <div className={styles.image}>
           <img
             src="https://www.epicshops.com/wp-content/uploads/2019/06/website-navigation-bar-header.jpg"
-            alt="Navigation" />
+            alt="Navigation"
+          />
         </div>
         <div className={styles.text}>
           <h2>Navigation</h2>
@@ -94,6 +97,13 @@ const HowItWorks = () => (
           </p>
         </div>
       </div>
+    </div>
+
+    <div className={styles.suggestion_button}>
+      <h1>Ready to Sign Up?</h1>
+      <Link to="/auth">
+        <button>Sign Up</button>
+      </Link>
     </div>
   </Layout>
 );
