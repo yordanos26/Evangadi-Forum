@@ -41,10 +41,12 @@ app.use("/api/images", authenticationMiddleware, imageRoute);
 // function to start server
 async function start() {
   try {
-    const result = await dbconnection.execute("select 'test' ");
-    app.listen(port);
-    console.log("database connection established!");
-    console.log(`listening on ${port}`);
+    const result = await dbconnection.execute("select 'test' ").then(() => {
+      console.log("database connection established!");
+    });
+    app.listen(port, () => {
+      console.log(`listening on ${port}`);
+    });
   } catch (error) {
     console.log(error.message);
   }
